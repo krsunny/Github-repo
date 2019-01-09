@@ -3,10 +3,24 @@ import axios from 'axios';
 
 const Context = React.createContext();
 
+const reducer = (state, action) => {
+  switch(action.type) {
+    case 'SEARCH_REPOS':
+      return {
+        ...state,
+        repo_list: action.payload,
+        heading: 'Search Results'
+      };
+    default:
+      return state;
+  }
+}
+
 export class Provider extends Component {
   state = {
     repo_list: [],
-    heading: 'Top 10 starred repositories on Github'
+    heading: 'Top 10 starred repositories on Github',
+    dispatch: action => this.setState(state => reducer(state, action))
   }
 
   componentDidMount() {

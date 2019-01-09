@@ -37,7 +37,7 @@ class Repo extends Component {
                   {repo.language}
                 </span>
               ) : (
-                'There is no programming language'
+                'There is no programming languages'
               )}
               <br />
               <span className="badge badge-danger mr-1">
