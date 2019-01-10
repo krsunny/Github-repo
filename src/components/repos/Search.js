@@ -4,7 +4,8 @@ import { Consumer } from '../../context';
 
 class Search extends Component {
   state = {
-    repoName: ''
+    repoName: '',
+    refreshName: ''
   };
 
   onSubmit = (dispatch, e) => {
@@ -20,13 +21,32 @@ class Search extends Component {
           payload: res.data.items
         });
 
-        this.setState({ repoName: '' });
+        this.setState({
+          refreshName: this.state.repoName,
+          repoName: ''
+        });
       })
       .catch(err => console.log(err));
   };
 
   onChange = e => {
     this.setState({ [e.target.name]: e.target.value });
+  };
+
+  refreshRepos = (dispatch, e) => {
+    e.preventDefault();
+
+    axios
+      .get(
+        `https://api.github.com/search/repositories?q=${this.state.refreshName}`
+      )
+      .then(res => {
+        dispatch({
+          type: 'SEARCH_REPOS',
+          payload: res.data.items
+        });
+      })
+      .catch(err => console.log(err));
   };
 
   render() {
@@ -59,6 +79,16 @@ class Search extends Component {
                   Search
                 </button>
               </form>
+              {this.state.refreshName ? (
+                <div className="text-center">
+                  <p className="lead">Here you can update your results in need</p>
+                  <i
+                    className="fas fa-redo-alt btn text-info mb-2 refreshButton"
+                    onClick={this.refreshRepos.bind(this, dispatch)}
+                    style={{ fontSize: '40px' }}
+                  />
+                </div>
+              ) : null}
             </div>
           );
         }}
