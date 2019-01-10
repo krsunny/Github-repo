@@ -21,3 +21,4 @@
 <h3>3. Features:</h3>
 <p>- Display top 10 starred repositories on Github.</p>
 <p>- User enters to search for repos and get the details for any repos.</p>
+<p>- User can update the results without searching again.</p>
