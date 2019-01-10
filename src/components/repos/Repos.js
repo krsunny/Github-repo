@@ -8,7 +8,6 @@ class Repos extends Component {
     return (
       <Consumer>
         {value => {
-          console.log(value);
           const { repo_list, heading } = value;
 
           if (repo_list === undefined || repo_list.length === 0) {

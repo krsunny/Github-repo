@@ -18,7 +18,6 @@ class Details extends Component {
   render() {
     const { description, createdAt } = this.props;
     const { languages } = this.state;
-    console.log(languages)
 
     return (
       <ul className="list-group">
