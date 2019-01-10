@@ -3,6 +3,12 @@
 <h3>1. Introduction</h3>
 <p>- A React application using context API to manage the global state for fetching Github API.</p>
 <p>- Website: <a href="http://bntnam.com/react-github-restapi" target="_blank">http://bntnam.com/react-github-restapi</a></p>
+<p>- Local:</p>
+<ul>
+  <li><strong>Clone</strong> the project.</li>
+  <li><strong>npm install</strong></li>
+  <li><strong>npm start</strong></li>
+</ul>
 <p>- Source Code: <a href="https://github.com/bntnam/react-github-restapi" target="_blank">https://github.com/bntnam/react-github-restapi</a></p>
 <h3>2. Technologies</h3>
 <ul>
