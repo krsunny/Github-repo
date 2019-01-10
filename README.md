@@ -1,7 +1,7 @@
 <h1>Github Search Machine</h1>
 <img class="img-fluid mb-5" src="https://bntnam.github.io/img/portfolio/github-search-machine.png" alt="">
 <h3>1. Introduction</h3>
-<p>- DevChat: A react slack clone web chat application for developers.</p>
+<p>- A React application using context API to manage global state for fetching Github API.</p>
 <p>- Website: <a href="http://bntnam.com/react-github-restapi" target="_blank">http://bntnam.com/react-github-restapi</a></p>
 <p>- Source Code: <a href="https://github.com/bntnam/react-github-restapi" target="_blank">https://github.com/bntnam/react-github-restapi</a></p>
 <h3>2. Technologies</h3>
