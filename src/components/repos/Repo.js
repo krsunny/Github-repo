@@ -9,7 +9,7 @@ class Repo extends Component {
 
   onShowClick = e => {
     this.setState({ showDetails: !this.state.showDetails });
-  }
+  };
 
   render() {
     const { repo } = this.props;
@@ -19,7 +19,16 @@ class Repo extends Component {
       <div className="col-md-6">
         <div className="card mb-4 shadow-sm">
           <div className="card-body">
-            <h5 className="text-info">{repo.full_name}</h5>
+            <h5 className="text-info">
+              <a
+                href={repo.html_url}
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ color: 'inherit' }}
+              >
+                {repo.full_name}
+              </a>
+            </h5>
             <div className="card-text">
               {repo.language ? (
                 <span>
