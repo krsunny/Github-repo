@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import Moment from 'react-moment';
 
 class Details extends Component {
   state = {
@@ -28,7 +29,7 @@ class Details extends Component {
           <strong>Programming languages</strong>: {Object.keys(languages).toString()}
         </li>
         <li className="list-group-item">
-          <strong>Created at</strong>: {createdAt}
+          <strong>Created at</strong>: <Moment format="DD/MM/YYYY">{createdAt}</Moment>
         </li>
       </ul>
     );
