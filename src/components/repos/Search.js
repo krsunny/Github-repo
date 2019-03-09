@@ -58,9 +58,9 @@ class Search extends Component {
           return (
             <div className="card card-body mb-4 p-4">
               <h1 className="display-4 text-center">
-                <i className="fab fa-github" /> Search For Repositories
+                <i className="fab fa-github" /> Git Repo Search Filter
               </h1>
-              <p className="lead text-center">Get the details for any repos</p>
+              <p className="lead text-center"></p>
               <form onSubmit={this.onSubmit.bind(this, dispatch)}>
                 <div className="form-group">
                   <input
@@ -81,12 +81,7 @@ class Search extends Component {
               </form>
               {this.state.refreshName ? (
                 <div className="text-center">
-                  <p className="lead">Here you can update your results in need</p>
-                  <i
-                    className="fas fa-redo-alt btn text-info mb-2 refreshButton"
-                    onClick={this.refreshRepos.bind(this, dispatch)}
-                    style={{ fontSize: '40px' }}
-                  />
+                  
                 </div>
               ) : null}
             </div>

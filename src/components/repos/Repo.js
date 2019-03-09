@@ -19,7 +19,9 @@ class Repo extends Component {
       <div className="col-md-6">
         <div className="card mb-4 shadow-sm">
           <div className="card-body">
-            <h5 className="text-info">
+          <center><img src={repo.owner.avatar_url} width="100" height="100" /></center>
+            <center><h5 className="text-info">
+            
               <a
                 href={repo.html_url}
                 target="_blank"
@@ -28,51 +30,30 @@ class Repo extends Component {
               >
                 {repo.full_name}
               </a>
-            </h5>
-            <div className="card-text">
-              {repo.language ? (
-                <span>
-                  <span
-                    style={{
-                      backgroundColor: Colors[repo.language],
-                      borderRadius: '50%',
-                      display: 'inline-block',
-                      height: '12px',
-                      position: 'relative',
-                      top: '1px',
-                      width: '12px'
-                    }}
-                  />{' '}
-                  {repo.language}
-                </span>
-              ) : (
-                'There is no programming languages'
-              )}
-              <br />
+            </h5></center>
+            <center><div className="card-text">
               <span className="badge badge-danger mr-1">
                 <i className="fas fa-star" /> Stars: {repo.stargazers_count}
               </span>
-              <br />
+              
               <span className="badge badge-secondary mr-1">
                 <i className="fas fa-eye" /> Watchers: {repo.watchers_count}
               </span>
-              <br />
+              
               <span className="badge badge-success">
                 <i className="fas fa-code-branch" /> Forks: {repo.forks_count}
               </span>
-              <br />
-            </div>
+              <br/>
+              <span className="">
+                 {repo.description}
+              </span>
+              
+            </div></center>
           </div>
-          <div className="btn btn-info btn-block" onClick={this.onShowClick}>
-            <i className="fas fa-chevron-down" /> View details
-          </div>
-          {showDetails ? (
-            <Details
-              description={repo.description}
-              languagesUrl={repo.languages_url}
-              createdAt={repo.created_at}
-            />
-          ) : null}
+          <a className="btn btn-info btn-block" href={repo.html_url}>
+             View Profile
+          </a>
+
         </div>
       </div>
     );

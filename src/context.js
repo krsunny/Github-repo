@@ -25,7 +25,7 @@ export class Provider extends Component {
 
   componentDidMount() {
     axios
-      .get(`https://api.github.com/search/repositories?q=stars%3A%3E0&sort=stars&per_page=10`)
+      .get(``)
       .then(res => {
         this.setState({ repo_list: res.data.items })
       })
